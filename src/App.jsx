@@ -1,6 +1,7 @@
-
+import Button from '@mui/material/Button';
 import Header from './components/Header';
 import Dropdown from './components/Dropdown';
+import Box from '@mui/material/Box';
 
 function App() {
 
@@ -20,7 +21,9 @@ function App() {
             />
             <Dropdown
                 label='Units'
-                values={unitsValues} />
+                values={unitsValues} 
+            />
+            <Box sx={{p: 1}}><Button variant="contained">Submit</Button></Box>    
         </div>
     )
 }

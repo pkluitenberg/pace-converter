@@ -10,7 +10,6 @@ function Dropdown(props) {
   const [value, setValue] = React.useState('');
 
   const handleChange = (event) => {
-    console.log(event.target.value)
     setValue(event.target.value);
   };
 
