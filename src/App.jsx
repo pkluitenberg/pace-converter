@@ -21,11 +21,11 @@ function App() {
 
     const handleClick = (event) => {
         const convertedSeconds = paceConverter(minutes, seconds, units);
-        const displayMinutes = Math.floor(convertedSeconds/60)
-        const displaySeconds = Math.round(convertedSeconds%60)
+        const displayMinutes = Math.floor(convertedSeconds / 60)
+        const displaySeconds = Math.round(convertedSeconds % 60)
         const displayUnits = unitsValues.find(obj => obj.value === !units).label
-        setOutput(`${displayMinutes}:${('0'+displaySeconds).slice(-2)} ${displayUnits}`);
-      };
+        setOutput(`${displayMinutes}:${('0' + displaySeconds).slice(-2)} ${displayUnits}`);
+    };
 
     return (
         <div>
@@ -48,11 +48,13 @@ function App() {
             <Box sx={{ p: 1 }}>
                 <Button variant="contained" startIcon={<Autorenew />} onClick={event => (handleClick(event))}>Convert</Button>
             </Box>
-            <Paper sx={{ p: 1 }} elevation={1}>
-                <Typography sx={{ p: 1 }} variant="body">
-                    = {output}
-                </Typography>
-            </Paper>
+            <Box sx={{ p: 1 }}>
+                <Paper sx={{ p: 1 }} elevation={1}>
+                    <Typography sx={{ p: 1 }} variant="body">
+                        = {output}
+                    </Typography>
+                </Paper>
+            </Box>
         </div>
     )
 }
