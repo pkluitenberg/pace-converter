@@ -1,12 +1,12 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
-import Header from './components/Header';
-import Dropdown from './components/Dropdown';
+import Header from './Components/Header';
+import Dropdown from './Components/Dropdown';
 import Box from '@mui/material/Box';
 import Autorenew from '@mui/icons-material/Autorenew';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import paceConverter from './utils/paceConverter';
+import paceConverter from './Utils/paceConverter';
 
 function App() {
     const [seconds, setSeconds] = React.useState(0);
