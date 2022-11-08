@@ -5,7 +5,8 @@ import Dropdown from './components/Dropdown';
 import Box from '@mui/material/Box';
 import Autorenew from '@mui/icons-material/Autorenew';
 import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography'
+import Typography from '@mui/material/Typography';
+import paceConverter from './utils/paceConverter';
 
 function App() {
     const [seconds, setSeconds] = React.useState(0);
@@ -18,17 +19,12 @@ function App() {
     const secondsValues = Array.from(Array(60).keys())
     const unitsValues = [{ value: false, label: 'mins/km' }, { value: true, label: 'mins/mi' }]
 
-    function paceConverter(minutes, seconds, units) {
-        const totalSeconds = minutes*60 + seconds
-        const conversionConstant = 0.6213692038495188
-        const convertedSeconds = units ? (totalSeconds*conversionConstant) : (totalSeconds*(1/conversionConstant))
+    const handleClick = (event) => {
+        const convertedSeconds = paceConverter(minutes, seconds, units);
         const displayMinutes = Math.floor(convertedSeconds/60)
         const displaySeconds = Math.round(convertedSeconds%60)
         const displayUnits = unitsValues.find(obj => obj.value === !units).label
         setOutput(`${displayMinutes}:${('0'+displaySeconds).slice(-2)} ${displayUnits}`);
-      }
-    const handleClick = (event) => {
-        paceConverter(minutes, seconds, units)
       };
 
     return (
