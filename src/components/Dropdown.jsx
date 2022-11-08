@@ -11,6 +11,7 @@ function Dropdown(props) {
 
   const handleChange = (event) => {
     setValue(event.target.value);
+    props.onChange(event.target.value);
   };
 
   return (
@@ -24,8 +25,8 @@ function Dropdown(props) {
           label={props.label}
           onChange={handleChange}
         >
-          {props.values.map(val => (
-            <MenuItem key={val} value={val}>{val}</MenuItem>
+          {props.values.map(obj => (
+            <MenuItem key={obj.value?obj.value:obj} value={obj.value?obj.value:obj}>{obj.label?obj.label:obj}</MenuItem>
           ))}
         </Select>
       </FormControl>
@@ -35,7 +36,8 @@ function Dropdown(props) {
 
 Dropdown.propTypes = {
   label: PropTypes.string.isRequired,
-  values: PropTypes.array.isRequired
+  values: PropTypes.array.isRequired,
+  onChange: PropTypes.func.isRequired
 }
 
 export default Dropdown;
