@@ -15,7 +15,7 @@ function App() {
     const [output, setOutput] = React.useState('');
 
 
-    const minutesValues = Array.from(Array(25).keys())
+    const minutesValues = Array.from(Array(60).keys())
     const secondsValues = Array.from(Array(60).keys())
     const unitsValues = [{ value: false, label: 'mins/km' }, { value: true, label: 'mins/mi' }]
 

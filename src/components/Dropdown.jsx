@@ -17,10 +17,10 @@ function Dropdown(props) {
   return (
     <Box sx={{ minWidth: 120, p: 1 }}>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">{props.label}</InputLabel>
+        <InputLabel id="input-label">{props.label}</InputLabel>
         <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
+          labelId="select-label"
+          id="select"
           value={value}
           label={props.label}
           onChange={handleChange}
