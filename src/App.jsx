@@ -51,6 +51,7 @@ function App() {
                     label='Minutes'
                     values={minutesValues}
                     onChange={event => (setMinutes(event))}
+                    value={minutes}
                 />
             </Box>
             <Box sx={boxFormat}>
@@ -58,6 +59,7 @@ function App() {
                     label='Seconds'
                     values={secondsValues}
                     onChange={event => (setSeconds(event))}
+                    value={seconds}
                 />
             </Box>
             <Box sx={boxFormat}>
@@ -67,7 +69,7 @@ function App() {
                             label='From'
                             values={unitsValues}
                             onChange={value => (handleFromOnChange(value))}
-                            initialValue={unitsFrom}
+                            value={unitsFrom}
                         />
                     </Grid>
                     <Grid item sm={6}>
@@ -75,7 +77,7 @@ function App() {
                             label='To'
                             values={unitsValues}
                             onChange={value => (handleToOnChange(value))}
-                            initialValue={unitsTo}
+                            value={unitsTo}
                         />
                     </Grid>
                 </Grid>
