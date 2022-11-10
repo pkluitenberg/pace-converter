@@ -24,8 +24,8 @@ function Dropdown(props) {
         label={props.label}
         onChange={handleChange}
       >
-        {props.values.map(obj => (
-          <MenuItem key={obj.value ? obj.value : obj} value={obj.value ? obj.value : obj}>{obj.label ? obj.label : obj}</MenuItem>
+        {props.values.map(el => (
+          <MenuItem key={el} value={el}>{el}</MenuItem>
         ))}
       </Select>
     </FormControl>
