@@ -18,18 +18,30 @@ function App() {
 
     const [seconds, setSeconds] = React.useState(0);
     const [minutes, setMinutes] = React.useState(0);
-    const [units, setUnits] = React.useState('');
     const [output, setOutput] = React.useState('');
-
+    const [unitsFrom, setUnitsFrom] = React.useState(unitsValues[0]);
+    const [unitsTo, setUnitsTo] = React.useState(unitsValues[1]);
+    
     const handleClick = (event) => {
-        const convertedSeconds = paceConverter(minutes, seconds, units);
+        const convertedSeconds = paceConverter(minutes, seconds, unitsFrom);
         const displayMinutes = Math.floor(convertedSeconds / 60)
         const displaySeconds = Math.round(convertedSeconds % 60)
 
-        const displayUnits = unitsValues.find(el => el !== units)
-        console.log(displayUnits)
-        setOutput(`${displayMinutes}:${('0' + displaySeconds).slice(-2)} ${displayUnits}`);
+        setOutput(`${displayMinutes}:${('0' + displaySeconds).slice(-2)} ${unitsTo}`);
     };
+
+    const handleFromOnChange = (value) => {
+        console.log(value)
+        setUnitsFrom(value);
+        setUnitsTo(unitsValues.find(el => el !== value))
+    };
+    const handleToOnChange = (value) => {
+        console.log(value)
+        setUnitsTo(value);
+        setUnitsFrom(unitsValues.find(el => el !== value))
+    };
+
+    console.log(`unitsFrom: ${unitsFrom}, unitsTo: ${unitsTo}`)
 
     return (
         <div>
@@ -54,16 +66,16 @@ function App() {
                         <Dropdown
                             label='From'
                             values={unitsValues}
-                            onChange={event => (setUnits(event))}
-                            initialValue={unitsValues[0]}
+                            onChange={value => (handleFromOnChange(value))}
+                            initialValue={unitsFrom}
                         />
                     </Grid>
                     <Grid item sm={6}>
                         <Dropdown
                             label='To'
                             values={unitsValues}
-                            onChange={event => (console.log(''))}
-                            initialValue={unitsValues[1]}
+                            onChange={value => (handleToOnChange(value))}
+                            initialValue={unitsTo}
                         />
                     </Grid>
                 </Grid>
