@@ -55,6 +55,7 @@ function App() {
                             label='From'
                             values={unitsValues}
                             onChange={event => (setUnits(event))}
+                            initialValue={unitsValues[0]}
                         />
                     </Grid>
                     <Grid item sm={6}>
@@ -62,6 +63,7 @@ function App() {
                             label='To'
                             values={unitsValues}
                             onChange={event => (console.log(''))}
+                            initialValue={unitsValues[1]}
                         />
                     </Grid>
                 </Grid>

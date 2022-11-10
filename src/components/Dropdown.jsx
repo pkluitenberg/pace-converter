@@ -6,7 +6,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
 function Dropdown(props) {
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = React.useState(props.initialValue ? props.initialValue : '');
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -20,7 +20,7 @@ function Dropdown(props) {
         labelId="select-label"
         id="select"
         value={value}
-        defaultValue={props.defaultValue?props.defaultValue:''}
+        defaultValue={props.defaultValue ? props.defaultValue : ''}
         label={props.label}
         onChange={handleChange}
       >
@@ -35,7 +35,8 @@ function Dropdown(props) {
 Dropdown.propTypes = {
   label: PropTypes.string.isRequired,
   values: PropTypes.array.isRequired,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
+  initialValue: PropTypes.any
 }
 
 export default Dropdown;
