@@ -1,6 +1,8 @@
 # Pace Converter
 
-I got super annoyed with all the pace converters online. So, I made my own. It's not beautiful but it works. 
+I got super annoyed with all the pace converters online. So, I made my own. It's not beautiful but it works.
+
+Currently hosted at https://pk-pace-converter.herokuapp.com/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
