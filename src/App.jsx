@@ -1,14 +1,14 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
-import Header from './Components/Header';
-import Dropdown from './Components/Dropdown';
+import Header from './components/Header';
+import Dropdown from './components/Dropdown';
 import Box from '@mui/material/Box';
 import Autorenew from '@mui/icons-material/Autorenew';
 import ForwardOutlinedIcon from '@mui/icons-material/ForwardOutlined';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import paceConverter from './Utils/paceConverter';
+import paceConverter from './utils/paceConverter';
 
 function App() {
     const boxFormat = { maxWidth: 360, p: 1 }
