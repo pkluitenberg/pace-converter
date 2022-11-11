@@ -31,18 +31,15 @@ function App() {
         setOutput(`${displayMinutes}:${('0' + displaySeconds).slice(-2)} ${unitsTo}`);
     };
 
-    const handleFromOnChange = (value) => {
-        console.log(value)
+    const handleUnitsFromOnChange = (value) => {
         setUnitsFrom(value);
         setUnitsTo(unitsValues.find(el => el !== value))
     };
-    const handleToOnChange = (value) => {
-        console.log(value)
+    const handleUnitsToOnChange = (value) => {
         setUnitsTo(value);
         setUnitsFrom(unitsValues.find(el => el !== value))
     };
 
-    console.log(`unitsFrom: ${unitsFrom}, unitsTo: ${unitsTo}`)
 
     return (
         <div>
@@ -69,7 +66,7 @@ function App() {
                         <Dropdown
                             label='From'
                             values={unitsValues}
-                            onChange={value => (handleFromOnChange(value))}
+                            onChange={value => (handleUnitsFromOnChange(value))}
                             value={unitsFrom}
                         />
                     </Grid>
@@ -80,7 +77,7 @@ function App() {
                         <Dropdown
                             label='To'
                             values={unitsValues}
-                            onChange={value => (handleToOnChange(value))}
+                            onChange={value => (handleUnitsToOnChange(value))}
                             value={unitsTo}
                         />
                     </Grid>
